@@ -9,7 +9,11 @@ Dependencies: OpenCV - 4.5.1+ (Used in tests)
 Input: Path to the image file (tested with jpg, png). All supported formats can be found in OpenCv - imread() - [documentation](https://docs.opencv.org/master/d4/da8/group__imgcodecs.html).
 \
 \
-Output: Desired path for the text (.txt) file. Creates bounding box coordinates of the biggest detected face in form of: min_x;min_y;max_x;max_y. 
+Output: Desired path for the text (.txt) file. Creates bounding box coordinates of the biggest detected face in form of: min_x;min_y;max_x;max_y.
+Note the coordinate system:
+\
+![Image](https://i.stack.imgur.com/t4AiI.png)
+
 ```
 usage: detect_faces.py [-h] --input INPUT --output OUTPUT
 
