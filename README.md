@@ -12,6 +12,7 @@ Input: Path to the image file (tested with jpg, png). All supported formats can 
 Output: Desired path for the text (.txt) file. Creates bounding box coordinates of the biggest detected face in form of: min_x;min_y;max_x;max_y.
 Note the coordinate system:
 \
+\
 ![Image](https://i.stack.imgur.com/t4AiI.png)
 
 ```
