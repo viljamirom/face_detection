@@ -9,7 +9,7 @@ def extension_check(file, extension, file_use):
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Detect faces from image and return bounding box of biggest detection')
+    parser = argparse.ArgumentParser(description='Detect faces from image and returns bounding box of biggest detection')
     parser.add_argument('--input', required=True,
                         help='Path to the image file')
     parser.add_argument('--output', required=True,
@@ -20,6 +20,7 @@ def main():
     img = cv2.imread(args.input)
     if img is None:
         raise FileNotFoundError(f'"{args.input}" does not point to a supported image file or correct path')
+    # img = cv2.flip(img, 1)  #might need to mirror the image
 
     frozen_graph = 'frozen_inference_graph.pb'
     text_graph = 'graph.pbtxt'
