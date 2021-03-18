@@ -6,23 +6,23 @@ Example for this project and the used models can be found [here](https://github.
 Dependencies: OpenCV - 4.5.1+ (Used in tests)
 \
 \
-Input: Path to the image file (tested with jpg, png). All supported formats can be found in OpenCv - imread() - [documentation](https://docs.opencv.org/master/d4/da8/group__imgcodecs.html).
+Requires a webcam for the video feed. Documentation of the videocapture can be found [here](https://docs.opencv.org/3.4/d8/dfe/classcv_1_1VideoCapture.html#details).
 \
 \
-Output: Desired path for the text (.txt) file. Creates bounding box coordinates of the biggest detected face in form of: min_x;min_y;max_x;max_y.
+Output: Desired directory path for the detections. Saves the detections in text (.txt) file to the given directory. Creates bounding box coordinates of the biggest detected face in form of: min_x;min_y;max_x;max_y.
 Note the coordinate system:
 \
 \
 ![Image](https://i.stack.imgur.com/t4AiI.png)
 
 ```
-usage: detect_faces.py [-h] --input INPUT --output OUTPUT
+usage: detect_faces.py [-h] --output OUTPUT
 
-Detect faces from image and returns bounding box of biggest detection
+Detect faces from video feed and returns bounding box of biggest detection
 
 optional arguments:
   -h, --help       show this help message and exit
-  --input INPUT    Path to the image file
-  --output OUTPUT  Path to the output text file
+  --output OUTPUT  Path to the output directory
+
  ```
 
