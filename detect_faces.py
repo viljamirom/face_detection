@@ -2,12 +2,13 @@ import cv2
 import argparse
 import time
 import os
+from datetime import datetime
 
 
-def get_timestamp():
-    timeStamp = time.time()
-    timeStampObj = time.localtime(timeStamp)
-    return str(timeStampObj.tm_mday)+str(timeStampObj.tm_mon)+str(timeStampObj.tm_year)+str(timeStampObj.tm_hour)+str(timeStampObj.tm_min)+str(timeStampObj.tm_sec)
+def parse_output_file(path, format):
+    time_stamp = datetime.now().strftime("%d%m%Y_%H%M%S")
+    output_file = path+time_stamp+format
+    return output_file
 
 
 def check_output_path(path):
@@ -69,8 +70,8 @@ def main():
         cv2.rectangle(img, (target_face[0], target_face[1]), (target_face[2], target_face[3]), (255, 0, 0), 2)
         cv2.imshow("image", img)
 
-        timestamp = get_timestamp()
-        with open(output_path+timestamp+".txt", 'w') as file:
+        file_to_save = parse_output_file(output_path, ".txt")
+        with open(file_to_save, 'w') as file:
             file.write(";".join(str(x) for x in target_face))
             file.close()
 
