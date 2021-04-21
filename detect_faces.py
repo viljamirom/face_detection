@@ -59,7 +59,7 @@ def main():
             max_y = float(detection[6])
             width = int(max_x * cols - min_x * cols)
             height = int(max_y * rows - min_y * rows)
-            if score > 0.3 and width > 60:
+            if score > 0.3 and width > 40:
                 area = int(width * height)
                 if area > max_area:
                     max_area = area
